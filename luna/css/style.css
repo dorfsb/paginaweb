@@ -1,0 +1,101 @@
+ * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body, html {
+      width: 100%;
+      height: 100%;
+      font-family: 'Arial', sans-serif;
+      background-color: #2f2826;
+      color: white;
+      overflow: hidden;
+    }
+
+    .pantalla {
+      width: 100%;
+      height: 100%;
+      display: none;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    .visible {
+      display: flex;
+    }
+
+    .texto {
+      background-color: #5a5453;
+      padding: 2rem;
+      border-radius: 20px;
+      font-size: 1.5rem;
+      max-width: 700px;
+      cursor: pointer;
+      box-shadow: 0 0 10px #00000055;
+      transition: background-color 0.3s ease;
+    }
+
+    .escena {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(ellipse at top, #001f3f 0%, #000000 100%);
+    }
+
+    .luna {
+      position: absolute;
+      top: 30px;
+      right: 30px;
+      width: 100px;
+      height: 100px;
+      background: #fff;
+      border-radius: 50%;
+      box-shadow: 0 0 30px 10px #ffffffaa;
+      cursor: pointer;
+      transition: all 2s ease;
+      z-index: 2;
+    }
+
+    .luna.bajada {
+      top: calc(100% - 200px);
+      right: 50%;
+      transform: translateX(50%);
+    }
+
+    .campo {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 100px;
+      background: linear-gradient(#013220, #000);
+    }
+
+    .nuevo-texto {
+      position: absolute;
+      bottom: 120px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: auto;
+      background-color: #5a5453;
+      padding: 1.5rem 2rem;
+      border-radius: 20px;
+      font-size: 1.5rem;
+      opacity: 0;
+      transition: opacity 2s ease;
+      max-width: 80%;
+      text-align: center;
+    }
+
+    .nuevo-texto.visible {
+      opacity: 1;
+    }
+
+    @media (max-width: 600px) {
+      .texto, .nuevo-texto {
+        font-size: 1.2rem;
+        padding: 1.2rem;
+      }
+    }
