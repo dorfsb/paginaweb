@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Te baje la luna cande</title>
+</head>
+<body>
+
+  <!-- Pantalla de diálogos -->
+  <section class="pantalla visible" id="pantalla1">
+    <div class="texto" id="dialogo">
+      tocame jeje
+    </div>
+  </section>
+
+  <!-- Escenario con campo de noche -->
+  <section class="pantalla" id="pantalla2">
+    <div class="escena">
+      <div class="luna" id="luna"></div>
+      <div class="campo"></div>
+      
+    </div>
+  </section>
+
+  <script>
+    const pantalla1 = document.getElementById('pantalla1');
+    const pantalla2 = document.getElementById('pantalla2');
+    const dialogo = document.getElementById('dialogo');
+    const luna = document.getElementById('luna');
+    const nuevoTexto = document.getElementById('nuevoTexto');
+
+    const textos = [
+      "Bueno cande mira solo toca los textos para ir avanzando",
+      "ahora solo toca la luna para que te la baje corazón"
+    ];
+
+    let paso = 0;
+
+    dialogo.addEventListener('click', () => {
+      if (paso < textos.length) {
+        dialogo.textContent = textos[paso];
+        paso++;
+      } else {
+        pantalla1.classList.remove('visible');
+        pantalla2.classList.add('visible');
+      }
+    });
+
+    luna.addEventListener('click', () => {
+      luna.classList.add('bajada');
+      nuevoTexto.classList.add('visible');
+    });
+  </script>
+
+</body>
+</html>
